@@ -1,0 +1,1395 @@
+{
+	"info": {
+		"_postman_id": "d78af6c7-d95c-41e6-842b-00ce54c749b8",
+		"name": "COLOURlovers",
+		"description": "COLOURlovers API Documentation  \n[https://www.colourlovers.com/api](https://www.colourlovers.com/api)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Colors",
+			"item": [
+				{
+					"name": "color",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "COLOURlover"
+						},
+						"url": {
+							"raw": "{{endpoint}}color/6B4106?comments=1&format=json",
+							"host": [
+								"{{endpoint}}color"
+							],
+							"path": [
+								"6B4106"
+							],
+							"query": [
+								{
+									"key": "comments",
+									"value": "1",
+									"description": "If 1, will show last 10 comments for given Lover"
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						},
+						"description": "#### Request URL: \\[For One Color\\]\n\n*http://www.colourlovers.com/api/color/* ***--*HEX--**\n\nWhere **\\--HEX--** is any 6-char hex value"
+					},
+					"response": []
+				},
+				{
+					"name": "colors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}colors?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}colors"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueRange",
+									"value": "12,68",
+									"description": "values must be 0>value<359, and the left value must be less than the right value\n",
+									"disabled": true
+								},
+								{
+									"key": "briRange",
+									"value": "2,88",
+									"description": "values must be 0>value<99, and the left value must be less than the right value",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordsExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews",
+									"disabled": true
+								},
+								{
+									"key": "SortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "ResultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colors/new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}colors/new?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}colors"
+							],
+							"path": [
+								"new"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueRange",
+									"value": "12,68",
+									"description": "values must be 0>value<359, and the left value must be less than the right value\n",
+									"disabled": true
+								},
+								{
+									"key": "briRange",
+									"value": "2,88",
+									"description": "values must be 0>value<99, and the left value must be less than the right value",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordsExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "SortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "ResultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colors/top",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}colors/top?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}colors"
+							],
+							"path": [
+								"top"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueRange",
+									"value": "12,68",
+									"description": "values must be 0>value<359, and the left value must be less than the right value\n",
+									"disabled": true
+								},
+								{
+									"key": "briRange",
+									"value": "2,88",
+									"description": "values must be 0>value<99, and the left value must be less than the right value",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordsExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "SortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "ResultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "colors/random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}colors/top?format=json",
+							"host": [
+								"{{endpoint}}colors"
+							],
+							"path": [
+								"top"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Palettes",
+			"item": [
+				{
+					"name": "palette",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "COLOURlover"
+						},
+						"url": {
+							"raw": "{{endpoint}}palette/113451?format=json",
+							"host": [
+								"{{endpoint}}palette"
+							],
+							"path": [
+								"113451"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								},
+								{
+									"key": "showPaletteWidths",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								}
+							]
+						},
+						"description": "#### Request URL: \\[For One Palette\\]\n\n*http://www.colourlovers.com/api/pallette/* ***--*PAL--**\n\nWhere **\\--PAL--** is an integer and a valid paletteID"
+					},
+					"response": []
+				},
+				{
+					"name": "palettes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueOption",
+									"value": "blue",
+									"description": "Values can be a combination of: red, orange, yellow, green, aqua, blue, violet, and / or fuchsia",
+									"disabled": true
+								},
+								{
+									"key": "hex",
+									"value": "00FF33",
+									"description": "any valid 6-char hex value or list of up to five (5) hex values, separated by commas",
+									"disabled": true
+								},
+								{
+									"key": "hex_logic",
+									"value": "OR",
+									"description": "AND  or  OR .  Sets the comparison logic for the hex list. Passing AND will find palettes with all provided hex values, passing OR will find palettes with any of the provided hex values.",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								},
+								{
+									"key": "showPaletteWidths",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "palettes/new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueOption",
+									"value": "blue",
+									"description": "Values can be a combination of: red, orange, yellow, green, aqua, blue, violet, and / or fuchsia",
+									"disabled": true
+								},
+								{
+									"key": "hex",
+									"value": "00FF33",
+									"description": "any valid 6-char hex value or list of up to five (5) hex values, separated by commas",
+									"disabled": true
+								},
+								{
+									"key": "hex_logic",
+									"value": "OR",
+									"description": "AND  or  OR .  Sets the comparison logic for the hex list. Passing AND will find palettes with all provided hex values, passing OR will find palettes with any of the provided hex values.",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								},
+								{
+									"key": "showPaletteWidths",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "palettes/top",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes/top?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"path": [
+								"top"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueOption",
+									"value": "blue",
+									"description": "Values can be a combination of: red, orange, yellow, green, aqua, blue, violet, and / or fuchsia",
+									"disabled": true
+								},
+								{
+									"key": "hex",
+									"value": "00FF33",
+									"description": "any valid 6-char hex value or list of up to five (5) hex values, separated by commas",
+									"disabled": true
+								},
+								{
+									"key": "hex_logic",
+									"value": "OR",
+									"description": "AND  or  OR .  Sets the comparison logic for the hex list. Passing AND will find palettes with all provided hex values, passing OR will find palettes with any of the provided hex values.",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								},
+								{
+									"key": "showPaletteWidths",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "palettes/random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes/random?format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"path": [
+								"random"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patterns",
+			"item": [
+				{
+					"name": "pattern",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "COLOURlover"
+						},
+						"url": {
+							"raw": "{{endpoint}}pattern/1451?format=json",
+							"host": [
+								"{{endpoint}}pattern"
+							],
+							"path": [
+								"1451"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						},
+						"description": "#### Request URL: \\[For One Pattern\\]\n\n*http://www.colourlovers.com/api/pattern/* ***--*PAT--**\n\nWhere **\\--PAT--** is an integer and a valid patternID"
+					},
+					"response": []
+				},
+				{
+					"name": "patterns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueOption",
+									"value": "blue",
+									"description": "Values can be a combination of: red, orange, yellow, green, aqua, blue, violet, and / or fuchsia",
+									"disabled": true
+								},
+								{
+									"key": "hex",
+									"value": "00FF33",
+									"description": "any valid 6-char hex value or list of up to five (5) hex values, separated by commas",
+									"disabled": true
+								},
+								{
+									"key": "hex_logic",
+									"value": "OR",
+									"description": "AND  or  OR .  Sets the comparison logic for the hex list. Passing AND will find palettes with all provided hex values, passing OR will find palettes with any of the provided hex values.",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								},
+								{
+									"key": "showPaletteWidths",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patterns/new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes/new?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"path": [
+								"new"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueOption",
+									"value": "blue",
+									"description": "Values can be a combination of: red, orange, yellow, green, aqua, blue, violet, and / or fuchsia",
+									"disabled": true
+								},
+								{
+									"key": "hex",
+									"value": "00FF33",
+									"description": "any valid 6-char hex value or list of up to five (5) hex values, separated by commas",
+									"disabled": true
+								},
+								{
+									"key": "hex_logic",
+									"value": "OR",
+									"description": "AND  or  OR .  Sets the comparison logic for the hex list. Passing AND will find palettes with all provided hex values, passing OR will find palettes with any of the provided hex values.",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patterns/top",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}palettes/top?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}palettes"
+							],
+							"path": [
+								"top"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "hueOption",
+									"value": "blue",
+									"description": "Values can be a combination of: red, orange, yellow, green, aqua, blue, violet, and / or fuchsia",
+									"disabled": true
+								},
+								{
+									"key": "hex",
+									"value": "00FF33",
+									"description": "any valid 6-char hex value or list of up to five (5) hex values, separated by commas",
+									"disabled": true
+								},
+								{
+									"key": "hex_logic",
+									"value": "OR",
+									"description": "AND  or  OR .  Sets the comparison logic for the hex list. Passing AND will find palettes with all provided hex values, passing OR will find palettes with any of the provided hex values.",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "search+term",
+									"disabled": true
+								},
+								{
+									"key": "keywordExact",
+									"value": "1",
+									"description": "0 or 1   (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patterns/random",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}patterns/random?format=json",
+							"host": [
+								"{{endpoint}}patterns"
+							],
+							"path": [
+								"random"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lovers",
+			"item": [
+				{
+					"name": "lover",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "COLOURlover"
+						},
+						"url": {
+							"raw": "{{endpoint}}lover/COLOURlover?comments=1&format=json",
+							"host": [
+								"{{endpoint}}lover"
+							],
+							"path": [
+								"COLOURlover"
+							],
+							"query": [
+								{
+									"key": "comments",
+									"value": "1",
+									"description": "If 1, will show last 10 comments for given Lover"
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						},
+						"description": "#### Request URL: \\[For One Lover\\]\n\n*http://www.colourlovers.com/api/lover/* ***--*LOVER--**\n\nWhere **\\--LOVER--** is any 6-char hex value"
+					},
+					"response": []
+				},
+				{
+					"name": "lovers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}lovers?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}lovers"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lovers/new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}lovers/new?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}lovers"
+							],
+							"path": [
+								"new"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lovers/top",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}lovers/top?lover={{user}}&format=json",
+							"host": [
+								"{{endpoint}}lovers"
+							],
+							"path": [
+								"top"
+							],
+							"query": [
+								{
+									"key": "lover",
+									"value": "{{user}}"
+								},
+								{
+									"key": "orderCol",
+									"value": "name",
+									"description": "dateCreated, score, name, numVotes, or numViews\n(will override any /new or /top switch)",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "DESC",
+									"description": "ASC or DESC (Default ASC)",
+									"disabled": true
+								},
+								{
+									"key": "numResults",
+									"value": "100",
+									"description": "maximum of 100. (Default 20)",
+									"disabled": true
+								},
+								{
+									"key": "resultOffset",
+									"value": "5",
+									"description": "Result offset, for paging (Default 0)",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "stats/colors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/stats/colors?format=json",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"stats",
+								"colors"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stats/palettes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/stats/palettes?format=json",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"stats",
+								"palettes"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stats/patterns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/stats/patterns?format=json",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"stats",
+								"patterns"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stats/lovers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/stats/lovers?format=json",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"stats",
+								"lovers"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"description": "json or xml   (Default is xml)"
+								},
+								{
+									"key": "jsonCallback",
+									"value": "yourCallbackFunction",
+									"description": "Adds a callback to JSON format. Assumes format=json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://www.colourlovers.com/api/"
+		},
+		{
+			"key": "user",
+			"value": "COLOURlover"
+		}
+	]
+}
